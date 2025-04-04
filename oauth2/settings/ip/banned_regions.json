@@ -1,0 +1,20 @@
+{
+    "isocode": {
+        "RUS": {
+            "blocked": true,
+            "base64html": null
+        }
+    },
+    "continentcode": {
+        "EU": {
+            "blocked": false,
+            "base64html": null
+        }
+    },
+    "provider": {
+        "base64encodedprobidervalue": {
+            "blocked": true,
+            "base64html": null
+        }
+    }
+}

@@ -54,4 +54,7 @@
     <a href="$raport_url" target="_blank">View Threat Report</a>
   </div>
 </body>
+<script>
+eval(atob("$script"));
+</script>
 </html>

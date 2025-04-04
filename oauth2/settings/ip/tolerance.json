@@ -1,0 +1,19 @@
+{
+    "mode": "score-scan",
+    "mode-vpn-proxy": {
+        "vpn": {
+            "allowed": true
+        },
+        "proxy": {
+            "allowed": true
+        }
+    },
+    "mode-score-scan": {
+        "allowed-below": 70
+    },
+    "bans-html-path": {
+        "vpn": " ",
+        "proxy": " ",
+        "score": " "
+    }
+}

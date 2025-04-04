@@ -1,1 +1,57 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Access Blocked</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+    .card {
+      background: white;
+      padding: 2rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      text-align: center;
+    }
+    .card h1 {
+      color: #e74c3c;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .card a {
+      text-decoration: none;
+      background-color: #3498db;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+    .card a:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Access Blocked</h1>
+    <p>We've detected that you're using a VPN or proxy service which is not allowed.</p>
+    <p>If you believe this is an error, please check the report below or disable your VPN.</p>
+    <a href="$raport_url" target="_blank">View Threat Report</a>
+  </div>
+</body>
+</html>

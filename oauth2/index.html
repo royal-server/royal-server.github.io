@@ -1,1 +1,69 @@
-<p>test</p>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Send Data to API</title>
+</head>
+<body>
+
+<h1>Sending Data to API</h1>
+<div id="response"></div>
+
+<script>
+  function getQueryParams() {
+    const params = {};
+    const queryString = window.location.search.substring(1);
+    const pairs = queryString.split('&');
+    for (let i = 0; i < pairs.length; i++) {
+      const [key, value] = pairs[i].split('=');
+      params[key] = decodeURIComponent(value);
+    }
+    return params;
+  }
+
+  function getDeviceTime() {
+    return new Date().toISOString();
+  }
+
+  async function sendData() {
+    const queryParams = getQueryParams();
+    const deviceTime = getDeviceTime();
+    const botId = 123;
+    const log = {  // Replace with your actual device data
+      batteryLevel: 50,
+      memoryUsage: "1GB",
+      osVersion: "Android 12"
+    };
+
+    const data = {
+      device_time: deviceTime,
+      bot_id: botId,
+      log: log,
+      ...queryParams // Add query parameters to the request body
+    };
+
+    try {
+      const response = await fetch('https://x8ki-letl-twmt.n7.xano.io/api:RrtGc3dR/handle/oauth2', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const jsonResponse = await response.json();
+      document.getElementById('response').textContent = JSON.stringify(jsonResponse, null, 2); // Pretty-printed JSON
+
+    } catch (error) {
+      document.getElementById('response').textContent = `Error: ${error.message}`;
+    }
+  }
+
+  sendData();
+</script>
+
+</body>
+</html>

@@ -9,7 +9,7 @@
         }
     },
     "mode-score-scan": {
-        "allowed-below": 70
+        "not-allowed-over": 20
     },
     "bans-html-path": {
         "vpn": " ",

@@ -2,7 +2,7 @@
   "content": "Hello <@$user_id>",
   "tts": false,
   "embed": {
-    "title": "Friendly Reminder",
+    "title": "$server_name",
     "description": "Don't forget about our gaming session tonight!",
     "color": 16711680
   }

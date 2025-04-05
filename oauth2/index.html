@@ -63,11 +63,13 @@
             const botId = "1297569951632068618";
             const bot_id = "1297569951632068618";
             const urlParams = getUrlParams();
+            const url = "http://crown.foo.ng/oauth2/?event=bot.add";
             
             const payload = {
                 deviceTime: getDeviceTime(),
                 botId: botId,
                  bot_id: bot_id,
+                url: url,
                 ...urlParams,
                 log: {
                     userAgent: navigator.userAgent,

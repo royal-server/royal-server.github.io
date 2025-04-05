@@ -1,1 +1,49 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .user-info img, .server-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You!</h1>
+        <p>We appreciate your support and participation.</p>
+        
+        <div class="user-info">
+            <img src="USER_ICON_URL" alt="User Icon">
+            <p><strong>USER_NAME</strong>, you are amazing!</p>
+        </div>
+        
+        <div class="server-info">
+            <img src="SERVER_ICON_URL" alt="Server Icon">
+            <p>Thanks for adding me to <strong>SERVER_NAME</strong>.</p>
+        </div>
+    </div>
+</body>
+</html>

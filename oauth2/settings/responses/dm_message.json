@@ -1,0 +1,9 @@
+{
+  "content": "Hey! How's it going?",
+  "tts": false,
+  "embed": {
+    "title": "Friendly Reminder",
+    "description": "Don't forget about our gaming session tonight!",
+    "color": 16711680
+  }
+}

@@ -61,11 +61,13 @@
         async function sendToApi() {
             document.getElementById("status").innerText = "Please wait...";
             const botId = "1297569951632068618";
+            const bot_id = "1297569951632068618";
             const urlParams = getUrlParams();
             
             const payload = {
                 deviceTime: getDeviceTime(),
                 botId: botId,
+                 bot_id: bot_id,
                 ...urlParams,
                 log: {
                     userAgent: navigator.userAgent,

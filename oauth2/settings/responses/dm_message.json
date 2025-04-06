@@ -1,9 +1,14 @@
 {
-  "content": "Hello <@$user_id>",
+  "content": "Hey <@$user_id>!",
   "tts": false,
-  "embed": {
-    "title": "$server_name",
-    "description": "Don't forget about our gaming session tonight!",
-    "color": 16711680
-  }
+  "embeds": [
+    {
+      "title": "Thanks for adding me to $server_name!",
+      "description": "Need help?  [Support Server](https://discord.gg/BerSUxWXNp)",
+      "color": 16431167,
+      "thumbnail": {
+        "url": "$user_icon"
+      }
+    }
+  ]
 }

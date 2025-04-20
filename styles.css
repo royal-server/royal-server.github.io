@@ -1,4 +1,13 @@
 html {
-background-color: #36393e;
-background-image: url('https://us-east-1.tixte.net/uploads/ddeveloper.discowd.com/IMG_6745.png');
+   background-color: #36393e;
+   background-image: url('https://us-east-1.tixte.net/uploads/ddeveloper.discowd.com/IMG_6745.png');
+}
+.semi-transparent-box {
+    width: 80%; /* Make it responsive */
+    max-width: 600px; /* Set a maximum width */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.25); /* Black with 25% opacity */
+    color: white;
+    border-radius: 10px;
+    font-family: Helvetica, sans-serif;
 }

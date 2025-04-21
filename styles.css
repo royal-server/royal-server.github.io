@@ -1,6 +1,6 @@
-html {
+body {
    background-color: #36393e; /*Backup if bg-img is non funtional*/
-   background-image: url('https://us-east-1.tixte.net/uploads/ddeveloper.discowd.com/IMG_6745.png'); /*the cool background img of a chat*/
+   background-image: url('https://us-east-1.tixte.net/uploads/ddeveloper.discowd.com/chat.png'); /*the cool background img of a chat*/
 }
 .semi-transparent-box {
     width: 80%; /* Make it responsive */

@@ -20,6 +20,41 @@ body {
    background-color: #36393e; /*Backup if bg-img is non funtional*/
    background-image: url('https://us-east-1.tixte.net/uploads/ddeveloper.discowd.com/IMG_6745.png'); /*the cool background img of a chat*/
 }
+.collapsible {
+  background-color: #292b2f;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #202225;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #4a4c51;
+  color: white;
 }
 </style>
 </head>
@@ -65,7 +100,10 @@ body {
   • <pingu><a href="https://dscinv.xyz">Invomagic Studios</a></pingu> - Short Link Service<br>
         </p>
    </div>
+    <br><br>
+ <div class="semi-transparent-box">
+   <h2><b>FAQs</b></h2>
    </center>
 </body>
-<!--End lol-->
 </html>
+<!--End lmao, it's a bit awkward.-->

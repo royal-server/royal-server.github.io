@@ -12,36 +12,38 @@
   <meta property="og:image" content="https://us-east-1.tixte.net/uploads/anime-oni.discowd.com/Untitled408_20250317170125.png" />
 
   <!-- Google Fonts -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
 
   <!-- Custom Styles -->
   <style>
-    /* Body styling */
+    /* Reset margin and padding, remove default spacing */
     body {
-      font-family: "Open Sans", sans-serif; /*good font*/
+      margin: 0;
+      padding: 0;
+      font-family: "Open Sans", sans-serif; /* good font */
       background-color: #36393e;
-      background-image: url('https://us-east-1.tixte.net/uploads/ddeveloper.discowd.com/Untitled486_20250421183301.png'); /*It's a cool img*/
+      background-image: url('https://us-east-1.tixte.net/uploads/ddeveloper.discowd.com/Untitled486_20250421183301.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       color: #fff;
-      margin: 0;
-      padding: 20px;
+      /* Add padding-top to push content below the navbar */
+      padding-top: 70px; /* match your navbar height */
     }
-  /* Add padding-top to push content below fixed navbar */
-  padding-top: 70px; /* match your navbar height */
-}
+
     /* Navbar styles with smaller logo */
     .custom-navbar {
       background-color: #222;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
       border: none;
       padding: 10px 20px;
+      /* make sure navbar is not fixed so it naturally takes full width at top */
     }
 
     /* Make the navbar-brand container a flexbox for vertical centering */
@@ -166,37 +168,37 @@
   </style>
 </head>
 
-  <!-- Navbar with smaller logo -->
-  <nav class="navbar navbar-inverse custom-navbar">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <!-- Hamburger (if you're reading this they are tasty) toggle -->
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <!-- Small logo -->
-        <a class="navbar-brand" href="#">
-          <img src="https://raw.githubusercontent.com/royal-server/royal-server.github.io/refs/heads/main/favicon.ico" alt="Crown Logo" class="logo-img" />
-        </a>
-      </div>
-      
-      <!-- Collapsible menu -->
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">About Us</a></li>
-          <li><a href="https://crown.dscinv.xyz/support">Support Server</a></li>
-          <li><a href="https://crown-bot.gitbook.io/docs">Documentation</a></li>
-          <li><a href="https://crown.dscinv.xyz/invite">Invite Our Bot</a></li>
-        </ul>
-      </div>
+<!-- Navbar with smaller logo -->
+<nav class="navbar navbar-inverse custom-navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!-- Hamburger toggle -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- Small logo -->
+      <a class="navbar-brand" href="#">
+        <img src="https://raw.githubusercontent.com/royal-server/royal-server.github.io/refs/heads/main/favicon.ico" alt="Crown Logo" class="logo-img" />
+      </a>
     </div>
-  </nav>
-   <!-- Thingy underme is just bg handler -->
-  <body> 
-  <!-- Main Content -->
+    
+    <!-- Collapsible menu -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">About Us</a></li>
+        <li><a href="https://crown.dscinv.xyz/support">Support Server</a></li>
+        <li><a href="https://crown-bot.gitbook.io/docs">Documentation</a></li>
+        <li><a href="https://crown.dscinv.xyz/invite">Invite Our Bot</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<body>
   <div class="container">
     <!-- Meet the Team -->
     <div class="section-box semi-transparent-box">

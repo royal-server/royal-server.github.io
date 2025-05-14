@@ -54,6 +54,23 @@
       padding: 10px 20px;
     }
 
+    /* Dark mode dropdown menu styles */
+.navbar-inverse .dropdown-menu {
+  background-color: #222; /* Dark background */
+  border: none; /* Remove border for cleaner look */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Optional: add shadow for depth */
+}
+
+/* Make dropdown items light */
+.navbar-inverse .dropdown-menu > li > a {
+  color: #fff; /* Light text */
+}
+
+.navbar-inverse .dropdown-menu > li > a:hover,
+.navbar-inverse .dropdown-menu > li > a:focus {
+  background-color: #444; /* Slightly lighter on hover */
+  color: #fff;
+}
     /* Make the navbar-brand container a flexbox for vertical centering */
     .navbar-brand {
       display: flex; 

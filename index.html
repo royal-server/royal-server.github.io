@@ -1,4 +1,327 @@
 <!DOCTYPE html>
-  <html>
-    <h2> PAGE UNDER CONSTRUCTION</h2>
-  </html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crown Bot - Home Page</title>
+  
+  <!-- Meta tags for Discord -->
+  <meta name="theme-color" content="#666fff" />
+  <meta property="og:title" content="About Us!" />
+  <meta property="og:description" content="Crown Bot is a multipurpose bot that can help you in logging, server economy and much more" />
+  <meta property="og:image" content="https://us-east-1.tixte.net/uploads/anime-oni.discowd.com/Untitled408_20250317170125.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- Google Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=cheer" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+
+  <style>
+    /* Reset margin and padding, remove default spacing */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Open Sans", sans-serif;
+      background-image: url('https://us-east-1.tixte.net/uploads/ddeveloper.discowd.com/Untitled486_20250421183301.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #1e2124;
+      color: #fff;
+    }
+
+    strong {
+      font-family: "Outfit", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    /* Navbar styles with smaller logo */
+    .custom-navbar {
+      background-color: #222;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      border: none;
+      padding: 10px 20px;
+    }
+
+    /* Dark mode dropdown menu styles */
+.navbar-inverse .dropdown-menu {
+  background-color: #222; /* Dark background */
+  border: none; /* Remove border for cleaner look */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Optional: add shadow for depth */
+}
+
+/* Make dropdown items light */
+.navbar-inverse .dropdown-menu > li > a {
+  color: #fff; /* Light text */
+}
+
+.navbar-inverse .dropdown-menu > li > a:hover,
+.navbar-inverse .dropdown-menu > li > a:focus {
+  background-color: #444; /* Slightly lighter on hover */
+  color: #fff;
+}
+    /* Make the navbar-brand container a flexbox for vertical centering */
+    .navbar-brand {
+      display: flex; 
+      align-items: center;
+    }
+
+    /* Smaller logo size */
+    .logo-img {
+      max-height: 50px;
+      width: auto;
+      height: 50px;
+      transition: transform 0.3s;
+    }
+
+    @media(max-width: 768px) {
+      .logo-img {
+        height: 60px;
+      }
+    }
+
+    /* Logo hover effect */
+    .logo-img:hover {
+      transform: scale(1.1);
+      border-color: #ddd;
+    }
+
+    /* Navbar link styles */
+    .custom-navbar .nav > li > a {
+      color: #ddd;
+      font-weight: 500;
+      padding: 10px 15px;
+      transition: color 0.3s, background-color 0.3s;
+    }
+    .custom-navbar .nav > li > a:hover,
+    .custom-navbar .nav > li > a:focus {
+      color: #fff;
+      background-color: #444;
+      border-radius: 4px;
+    }
+    /* Active link style */
+    .custom-navbar .nav > li.active > a,
+    .custom-navbar .nav > li > a.current {
+      color: #fff;
+      background-color: #555;
+      border-radius: 4px;
+    }
+
+    /* Style for semi-transparent boxes */
+    .semi-transparent-box {
+      width: 80%;
+      max-width: 600px;
+      padding: 20px;
+      margin: 0 auto 20px auto;
+      background-color: rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    .semi-transparent-box:hover {
+      background-color: rgba(0, 0, 0, 0.35);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    }
+
+    /* Headings */
+    h2 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    /* Collapsible styles */
+    .collapsible {
+      background-color: #444851;
+      color: #fff;
+      cursor: pointer;
+      padding: 15px 20px;
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    .collapsible:hover {
+      background-color: #333842;
+    }
+    .active.collapsible {
+      background-color: #202225;
+    }
+    .collapsible::after {
+      content: '\002B';
+      font-size: 20px;
+      float: right;
+      transition: transform 0.3s;
+    }
+    .active.collapsible::after {
+      content: "\2212";
+      transform: rotate(180deg);
+    }
+
+    /* Collapsible content */
+    .content {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background-color: #4a4c51;
+      border-radius: 0 0 4px 4px;
+      margin-top: 0;
+    }
+
+    /* Animate collapse height */
+    .collapse.in {
+      -webkit-transition: height 0.3s ease;
+      -moz-transition: height 0.3s ease;
+      transition: height 0.3s ease;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<!-- Navbar with smaller logo -->
+<nav class="navbar navbar-inverse custom-navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!-- Hamburger toggle -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- Small logo -->
+      <a class="navbar-brand" href="#">
+        <img src="https://raw.githubusercontent.com/royal-server/royal-server.github.io/refs/heads/main/favicon.ico" alt="Crown Logo" class="logo-img" />
+      </a>
+    </div>
+    
+    <!-- Collapsible menu -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">About Us</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">External Links <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://crown.dscinv.xyz/support">Support Server</a></li>
+            <li><a href="https://crown-bot.gitbook.io/docs">Crown Bot Docs</a></li>
+            <li><a href="http://crown.foo.ng/oauth2/invite">Invite Crown Bot</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<body>
+  <div class="container" style="margin-top: 80px;"> <!-- Added margin-top to avoid overlap -->
+    <!-- Meet the Team -->
+    <div class="section-box semi-transparent-box">
+      <h2><img src="imgs/badge.png" height=5% width=5%> Meet the Team!</h2>
+      <p>Here at Crown Bot, developed and managed by three talented individuals:</p>
+      <ul>
+        <li><strong>Anime Oni</strong> - British - Bot Owner, Designer, Developer</li>
+        <li><strong>Exhai</strong> - Croatian - Head Developer</li>
+        <li><strong>DrMineword</strong> - Polish - Website Developer & Manager</li>
+      </ul>
+      <p>DrMineword and Exhai started as server developers. DrMineword is the most senior manager, and he held the Manager role before Exhai became a developer. Anime Oni is the bot owner, responsible for emoji and logo designs.</p>
+    </div>
+
+    <!-- Credits -->
+    <div class="section-box semi-transparent-box">
+      <h2><span class="material-symbols-outlined">cheer</span> Credits</h2>
+      <p>We would like to thank these people for their contributions:</p>
+      <ul>
+        <li><strong>PVS Shadow</strong> - Server Admin</li>
+        <li><strong>Balazs</strong> - Former Developer</li>
+        <li><strong>QASSASI</strong> - Former Head of Development</li>
+        <li><strong>Bakuking</strong> - Former Developer & Designer</li>
+        <li><strong>w1xyv</strong> - Former Developer & Designer</li>
+        <li><strong>Miko</strong> - Former Designer</li>
+        <li><strong>Star</strong> - Former Designer</li>
+        <li><strong>Alex</strong> - Former Designer</li>
+        <li><strong><a href="https://dscinv.xyz" target="_blank" rel="noopener noreferrer">Invomagic Studios</a></strong> - Short Link Service</li>
+      </ul>
+    </div>
+
+    <!-- FAQs -->
+    <div class="section-box semi-transparent-box">
+      <h2>FAQs</h2>
+      <button class="collapsible">Why does Crown Bot need my email?</button>
+      <div class="content">
+        <p>Crown Bot uses your email solely for verification when granting or claiming premium, and for important notifications. <strong>We will never use your email for advertisements.</strong></p>
+      </div>
+
+      <button class="collapsible">Can I suggest a feature?</button>
+      <div class="content">
+        <p>Yes! Join our <a href="https://crown.dscinv.xyz/support" target="_blank" rel="noopener noreferrer">support server</a> and use the <a href="https://discord.com/channels/1214890354504105994/1268240988837773383" target="_blank" rel="noopener noreferrer">#✨|suggestions</a> channel.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts for collapsible -->
+  <script>
+    document.querySelectorAll('.collapsible').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const content = btn.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+  
+  <!-- Bootstrap JS dependencies -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Custom JS for animated collapse -->
+  <script>
+    $(document).ready(function() {
+      var $navbarCollapse = $('.navbar-collapse');
+
+      $navbarCollapse.on('show.bs.collapse', function() {
+        var $this = $(this);
+        var elHeight = $this.get(0).scrollHeight + "px";
+        $this.css('height', '0px');
+        setTimeout(function() {
+          $this.css('height', elHeight);
+        }, 10);
+      });
+
+      $navbarCollapse.on('hide.bs.collapse', function() {
+        var $this = $(this);
+        var elHeight = $this.get(0).scrollHeight + "px";
+        $this.css('height', elHeight);
+        setTimeout(function() {
+          $this.css('height', '0px');
+        }, 10);
+      });
+
+      $navbarCollapse.on('transitionend webkitTransitionEnd oTransitionEnd', function() {
+        if ($(this).hasClass('in')) {
+          $(this).css('height', 'auto');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

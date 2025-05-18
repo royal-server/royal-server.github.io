@@ -1,4 +1,236 @@
 <!DOCTYPE html>
-  <html>
-    <h2> PAGE UNDER CONSTRUCTION</h2>
-  </html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crown Bot - Homepage</title>
+
+  <!-- Meta tags for Discord -->
+  <meta name="theme-color" content="#666fff" />
+  <meta property="og:title" content="About Us!" />
+  <meta property="og:description" content="Crown Bot is a multipurpose bot that can help you in logging, server economy and much more" />
+  <meta property="og:image" content="https://us-east-1.tixte.net/uploads/anime-oni.discowd.com/Untitled408_20250317170125.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- Google Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=cheer" />
+
+  <!-- Bootstrap CSS (Bootstrap 5) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    /* Reset margin and padding, set background */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Open Sans", sans-serif;
+      background-image: url('https://us-east-1.tixte.net/uploads/ddeveloper.discowd.com/Untitled486_20250421183301.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: #1e2124;
+      color: #fff;
+    }
+
+    strong {
+      font-family: "Outfit", sans-serif;
+      font-weight: 500;
+    }
+
+    /* Navbar styling */
+    .custom-navbar {
+      background-color: #222;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Dropdown menu styles */
+    .dropdown-menu {
+      background-color: #222;
+      border: none;
+    }
+    .dropdown-menu a {
+      color: #fff;
+    }
+    .dropdown-menu a:hover {
+      background-color: #444;
+    }
+
+    /* Logo styles */
+    .logo-img {
+      max-height: 50px;
+      width: auto;
+      height: 50px;
+      transition: transform 0.3s;
+    }
+    @media(max-width: 768px) {
+      .logo-img {
+        height: 60px;
+      }
+    }
+    .logo-img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Navbar links */
+    .nav-link {
+      color: #ddd;
+      font-weight: 500;
+      padding: 10px 15px;
+      transition: color 0.3s, background-color 0.3s;
+    }
+    .nav-link:hover,
+    .nav-link:focus {
+      color: #fff;
+      background-color: #444;
+      border-radius: 4px;
+    }
+    .nav-link.active {
+      color: #fff;
+      background-color: #555;
+      border-radius: 4px;
+    }
+
+    /* Section boxes styling */
+    .semi-transparent-box {
+      width: 80%;
+      max-width: 600px;
+      padding: 20px;
+      margin: 0 auto 20px auto;
+      background-color: rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    .semi-transparent-box:hover {
+      background-color: rgba(0, 0, 0, 0.35);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    }
+
+    /* Headings */
+    h2 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="https://raw.githubusercontent.com/royal-server/royal-server.github.io/refs/heads/main/favicon.ico" alt="Crown Logo" class="logo-img me-2" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="about-us.html">About Us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="externalLinksDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            External Links
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="externalLinksDropdown">
+            <li><a class="dropdown-item" href="https://crown.dscinv.xyz/support" target="_blank" rel="noopener noreferrer">Support Server</a></li>
+            <li><a class="dropdown-item" href="https://crown-bot.gitbook.io/docs" target="_blank" rel="noopener noreferrer">Crown Bot Docs</a></li>
+            <li><a class="dropdown-item" href="http://crown.foo.ng/oauth2/invite" target="_blank" rel="noopener noreferrer">Invite Crown Bot</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+<!-- Main Content -->
+<br> <br>
+  <div class="container" style="margin-top: 80px;"> <!-- To prevent overlap with fixed navbar -->
+
+  <!-- Meet the Team -->
+  <div class="section-box semi-transparent-box">
+    <center>
+      <h2></h2>
+    </center>
+    <p>Here at Crown Bot, developed and managed by three talented individuals:</p>
+    <ul>
+      <li><strong>Anime Oni</strong> - British - Bot Owner, Designer, Developer</li>
+      <li><strong>Exhai</strong> - Croatian - Head Developer</li>
+      <li><strong>DrMineword</strong> - Polish - Website Developer & Manager</li>
+    </ul>
+    <p>
+      DrMineword and Exhai started as server developers. DrMineword is the most senior manager, and he held the Manager role before Exhai became a developer. Anime Oni is the bot owner, responsible for emoji and logo designs.
+    </p>
+  </div>
+
+  <!-- Credits -->
+  <div class="section-box semi-transparent-box">
+    <center>
+      <h2>
+        <span class="material-symbols-outlined">cheer</span> Credits
+      </h2>
+    </center>
+    <p>We would like to thank these people for their contributions:</p>
+    <ul>
+      <li><strong>PVS Shadow</strong> - Server Admin</li>
+      <li><strong>Balazs</strong> - Former Developer</li>
+      <li><strong>QASSASI</strong> - Former Head of Development</li>
+      <li><strong>Bakuking</strong> - Former Developer & Designer</li>
+      <li><strong>w1xyv</strong> - Former Developer & Designer</li>
+      <li><strong>Miko</strong> - Former Designer</li>
+      <li><strong>Star</strong> - Former Designer</li>
+      <li><strong>Alex</strong> - Former Designer</li>
+      <li><strong><a href="https://dscinv.xyz" target="_blank" rel="noopener noreferrer">Invomagic Studios</a></strong> - Short Link Service</li>
+    </ul>
+  </div>
+
+  <!-- FAQs with Dark Mode Accordion -->
+  <div class="section-box semi-transparent-box">
+    <h2>FAQs</h2>
+    <div class="accordion" id="faqAccordion">
+      <!-- FAQ Item 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            Why does Crown Bot need my email?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Crown Bot uses your email solely for verification when granting or claiming premium, and for important notifications. <strong>We will never use your email for advertisements.</strong>
+          </div>
+        </div>
+      </div>
+      <!-- FAQ Item 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Can I suggest a feature?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes! Join our <a href="https://crown.dscinv.xyz/support" target="_blank" rel="noopener noreferrer" class="text-info">support server</a> and use the <a href="https://discord.com/channels/1214890354504105994/1268240988837773383" target="_blank" rel="noopener noreferrer" class="text-info">#✨|suggestions</a> channel.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Bootstrap JS Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
